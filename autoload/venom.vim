@@ -3,24 +3,30 @@ if exists('g:venom_sourced') || &cp
 endif
 let g:venom_sourced = 1
 
+let s:sfile = expand("<sfile>")
+
+function! venom#Import(sfile, module_name)
+py << END_PY
+import vim
+import os
+import sys
+
+sys.path.append(os.path.dirname(vim.eval("a:sfile")))
+
+if vim.eval("a:module_name") not in globals():
+    globals()[vim.eval("a:module_name")] = __import__(vim.eval("a:module_name"))
+
+sys.path.remove(os.path.dirname(vim.eval("a:sfile")))
+END_PY
+endfunction
+
 function! venom#Load()
     if exists('g:venom_loaded')
         return
     endif
     let g:venom_loaded = 1
 
-py << END_PY
-import vim
+    call venom#Import(s:sfile, "venom")
 
-class venom(object):
-    @staticmethod
-    def include_guard(name):
-        res = vim.eval("exists('g:%s') || &cp") == '0'
-        vim.command("let g:%s = 1" % name)
-        return res
-
-vim.venom = venom
-END_PY
-
-echom "VENOM LOADED"
+    echom "VENOM LOADED"
 endfunction
