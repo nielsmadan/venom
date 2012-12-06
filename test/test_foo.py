@@ -1,15 +1,20 @@
 import sys
+import types
 
-sys.modules['vim'] = object()
+import flexmock
+
+dummy_vim = types.ModuleType('Dummy Vim Module', "Dummy")
+
+sys.modules['vim'] = dummy_vim
 
 import vim
+vim.command = lambda x: x
 
-import autoload.venom
+import autoload.venom as venom
 
 
 def test_nnoremap():
-    assert 42 == 42
-    # def mock_command(test_input):
-    #     assert test_input == "nnoremap <c-c> :py venom.fn_proxy['what']()<CR>" % keys)
-# 
-#     vim.command = mock_command
+    flexmock.flexmock(vim)
+    vim.should_receive("command").with_args("nnoremap <c-c> :py venom.fn_proxy['what']()<CR>")
+
+    venom.nnoremap("<c-c>", lambda x: x)
