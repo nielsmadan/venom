@@ -34,7 +34,7 @@ def _create_mapping_fn(map_cmd):
     def _inner_map(keys, fn):
         global PROXY_INDEX
         fn_proxy[PROXY_INDEX] = fn
-        vim.command("nnoremap %s :py venom.fn_proxy[%d]()<CR>" % (keys, PROXY_INDEX))
+        vim.command("%s %s :py venom.fn_proxy[%d]()<CR>" % (map_cmd, keys, PROXY_INDEX))
         PROXY_INDEX += 1
 
     return _inner_map
@@ -52,15 +52,14 @@ xnoremap = _create_mapping_fn("xnoremap")
 #         self.col = col
 # 
 # 
-# def get_selection_coords():
-#     start_line, start_col = vim.eval("getpos('v')")[1:3]
-#     end_line, end_col = vim.eval("getpos('.')")[1:3]
+def get_selection_coords():
+    start_line, start_col = vim.eval("getpos(\"'<\")")[1:3]
+    end_line, end_col = vim.eval("getpos(\"'>\")")[1:3]
+
+    return ((start_line, start_col), (end_line, end_col))
+
+def get_visual_selection():
+    print get_selection_coords()
 # 
-#     if start_line < end_line or (start_line == end_line and start_col < end_col):
-#         return ((start_line, start_col), (end_line, end_col))
-#     else:
-#         return ((end_line, end_col), (start_line, start_col))
-# 
-# 
-# def get_visual_selection():
-#     print get_selection_coords()
+# noremap("<leader>z", get_visual_selection)
+
