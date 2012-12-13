@@ -2,6 +2,7 @@ import sys
 import os
 
 import vim
+import vim_opt
 
 
 fn_proxy = {}
