@@ -1,12 +1,21 @@
 import vim
 
 _BOOL_OPTS = set(('allowrevins', 'altkeymap', 'antialias', 'autochdir', 'arabic', 'arabicshape',
-                  'autoindent', 'autoread', 'autowrite', 'backup', 'ballooneval'))
+                  'autoindent', 'autoread', 'autowrite', 'backup', 'ballooneval', 'binary',
+                  'bioskey', 'bomb', 'buflisted', 'buftype', 'cindent', 'compatible', 'confirm',
+                  'conskey', 'copyindent', 'cscoperelative', 'cscopetag', 'cscopeverbose',
+                  'cursorbind', 'cursorcolumn', 'cursorline', 'delcombine', 'diff', 'digraph'))
 
-_NUM_OPTS = set(('aleph', 'balloondelay'))
+_NUM_OPTS = set(('aleph', 'balloondelay', 'cmdheight', 'cmdwinheight', 'columns', 'concellevel',
+                 'cscopepathcomp', 'cscopetagorder'))
 
 _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdir', 'backupext',
-                 'backupskip', ))
+                 'backupskip', 'balloonexpr', 'breakat', 'browsedir', 'bufhidden', 'casemap',
+                 'cdpath', 'cedit', 'charconvert', 'cinkeys', 'cinoptions', 'cinwords',
+                 'clipboard', 'colorcolumn', 'comments', 'commentstring', 'complete',
+                 'completefunc', 'completeopt', 'concealcursor', 'cpoptions', 'cryptmethod',
+                 'cscopeprg', 'cscopequickfix', 'debug', 'define', 'dictionary', 'diffexpr',
+                 'diffopt', 'directory', 'display', 'eadirection'))
 
 
 class _opt(object):

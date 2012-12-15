@@ -14,6 +14,15 @@ Contents:
    vim-opt
 
 
+TODOs
+-----
+
+* completion
+* look into conceal, maybe update vim option list.
+* look into cscope support.
+* look into diffexpr.
+
+
 
 Indices and tables
 ==================
