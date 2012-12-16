@@ -6,12 +6,15 @@ _BOOL_OPTS = set(('allowrevins', 'altkeymap', 'antialias', 'autochdir', 'arabic'
                   'conskey', 'copyindent', 'cscoperelative', 'cscopetag', 'cscopeverbose',
                   'cursorbind', 'cursorcolumn', 'cursorline', 'delcombine', 'diff', 'digraph',
                   'edcompatible', 'endofline', 'equalalways', 'equalprg', 'errorbells', 'esckeys',
-                  'expandtab', 'exrc', 'fkmap', 'foldenable', 'fsync', 'gdefault', 'guipty', 
+                  'expandtab', 'exrc', 'fkmap', 'foldenable', 'fsync', 'gdefault', 'guipty',
+                  'hidden', 'hlsearch', 'hkmap', 'hkmapp', 
+
+                  'number',
                   ))
 
 _NUM_OPTS = set(('aleph', 'balloondelay', 'cmdheight', 'cmdwinheight', 'columns', 'concellevel',
                  'cscopepathcomp', 'cscopetagorder', 'foldcolumn', 'foldlevel', 'foldlevelstart',
-                 'foldminlines', 'foldnestmax', 'guiheadroom', 
+                 'foldminlines', 'foldnestmax', 'guiheadroom', 'history', 
                  ))
 
 _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdir', 'backupext',
@@ -26,18 +29,19 @@ _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdi
                  'foldmarker', 'foldmethod', 'foldopen', 'foldtext', 'formatoptions',
                  'formatlistpat', 'formatprg', 'formatexpr', 'grepformat', 'grepprg',
                  'guicursor', 'guifont', 'guifontset', 'guifontwide', 'guioptions',
-                 'guitablabel', 'guitabtooltip', 
+                 'guitablabel', 'guitabtooltip', 'helpfile', 'helpheight', 'helplang',
+                 'highlight', 
                  ))
 
 
 class _opt(object):
     def __getattr__(self, name):
-        print "TRYING TO GET %s" % name
+        # print "TRYING TO GET %s" % name
         if name in _BOOL_OPTS:
             return vim.eval('&%s' % name) == '1'
 
     def __setattr__(self, name, val):
-        print "TRYING TO SET %s TO %s" % (name, val)
+        # print "TRYING TO SET %s TO %s" % (name, val)
         if name in _BOOL_OPTS:
             if val:
                 vim.command('set %s' % name)
@@ -46,9 +50,9 @@ class _opt(object):
 
 
 vim.opt = _opt()
-vim.opt.number = True
-print vim.opt.number
-vim.opt.number = False
-print vim.opt.number
-
-print "VIM OPT LOADED"
+# vim.opt.number = True
+# print vim.opt.number
+# vim.opt.number = False
+# print vim.opt.number
+# 
+# print "VIM OPT LOADED"
