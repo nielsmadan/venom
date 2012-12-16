@@ -18,9 +18,15 @@ TODOs
 -----
 
 * completion
-* look into conceal, maybe update vim option list.
-* look into cscope support.
-* look into diffexpr.
+* conceal
+* cscope
+* diffexpr
+* balloons
+* status line
+* windows
+* buffers
+* folding
+* gui tabs
 
 
 

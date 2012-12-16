@@ -4,10 +4,15 @@ _BOOL_OPTS = set(('allowrevins', 'altkeymap', 'antialias', 'autochdir', 'arabic'
                   'autoindent', 'autoread', 'autowrite', 'backup', 'ballooneval', 'binary',
                   'bioskey', 'bomb', 'buflisted', 'buftype', 'cindent', 'compatible', 'confirm',
                   'conskey', 'copyindent', 'cscoperelative', 'cscopetag', 'cscopeverbose',
-                  'cursorbind', 'cursorcolumn', 'cursorline', 'delcombine', 'diff', 'digraph'))
+                  'cursorbind', 'cursorcolumn', 'cursorline', 'delcombine', 'diff', 'digraph',
+                  'edcompatible', 'endofline', 'equalalways', 'equalprg', 'errorbells', 'esckeys',
+                  'expandtab', 'exrc', 'fkmap', 'foldenable', 'fsync', 'gdefault', 'guipty', 
+                  ))
 
 _NUM_OPTS = set(('aleph', 'balloondelay', 'cmdheight', 'cmdwinheight', 'columns', 'concellevel',
-                 'cscopepathcomp', 'cscopetagorder'))
+                 'cscopepathcomp', 'cscopetagorder', 'foldcolumn', 'foldlevel', 'foldlevelstart',
+                 'foldminlines', 'foldnestmax', 'guiheadroom', 
+                 ))
 
 _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdir', 'backupext',
                  'backupskip', 'balloonexpr', 'breakat', 'browsedir', 'bufhidden', 'casemap',
@@ -15,7 +20,14 @@ _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdi
                  'clipboard', 'colorcolumn', 'comments', 'commentstring', 'complete',
                  'completefunc', 'completeopt', 'concealcursor', 'cpoptions', 'cryptmethod',
                  'cscopeprg', 'cscopequickfix', 'debug', 'define', 'dictionary', 'diffexpr',
-                 'diffopt', 'directory', 'display', 'eadirection'))
+                 'diffopt', 'directory', 'display', 'eadirection', 'encoding', 'errorfile',
+                 'errorformat', 'eventignore', 'fileencoding', 'fileencodings', 'fileformat',
+                 'fileformats', 'filetype', 'fillchars', 'foldclose', 'foldexpr', 'foldignore',
+                 'foldmarker', 'foldmethod', 'foldopen', 'foldtext', 'formatoptions',
+                 'formatlistpat', 'formatprg', 'formatexpr', 'grepformat', 'grepprg',
+                 'guicursor', 'guifont', 'guifontset', 'guifontwide', 'guioptions',
+                 'guitablabel', 'guitabtooltip', 
+                 ))
 
 
 class _opt(object):
