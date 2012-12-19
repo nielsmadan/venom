@@ -61,6 +61,7 @@ def get_selection_coords():
 
 def get_visual_selection():
     print get_selection_coords()
-# 
-# noremap("<leader>z", get_visual_selection)
 
+
+def get_current_line(read_only=True):
+    return vim.eval('getline(".")')
