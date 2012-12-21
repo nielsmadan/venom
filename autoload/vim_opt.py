@@ -38,7 +38,11 @@ class _opt(object):
     def __getattr__(self, name):
         # print "TRYING TO GET %s" % name
         if name in _BOOL_OPTS:
-            return vim.eval('&%s' % name) == '1'
+            return vim.eval('&' + name) == '1'
+        elif name in _NUM_OPTS:
+            return int(vim.eval('&' + name), 0)
+        elif name in _STR_OPTS:
+            return vim.eval('&' + name)
 
     def __setattr__(self, name, val):
         # print "TRYING TO SET %s TO %s" % (name, val)
@@ -50,9 +54,3 @@ class _opt(object):
 
 
 vim.opt = _opt()
-# vim.opt.number = True
-# print vim.opt.number
-# vim.opt.number = False
-# print vim.opt.number
-# 
-# print "VIM OPT LOADED"
