@@ -1,0 +1,15 @@
+import vim
+
+
+class _g(object):
+    def __getattr__(self, name):
+        return vim.eval("g:%s" % name)
+
+    def __setattr__(self, name, val):
+        # print "TRYING TO SET g:%s to %s" % (name, val)
+        vim.command("let g:%s=%s" % (name, val))
+
+    def is_defined(self, name):
+        return vim.fn.exists("g:" + name)
+
+vim.g = _g()

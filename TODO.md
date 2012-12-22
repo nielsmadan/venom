@@ -1,12 +1,19 @@
 # TODOs
 
+## version 0.5
+
+### vim module
+
+* `[ ]` normal mode interface
+
 ## version 0.2
 
 ### vim module
 
 * `[>]` options
 * `[ ]` functions
-* `[ ]` globals
+* `[X]` globals
+* `[ ]` mapping commands
 
 ### venom module
 

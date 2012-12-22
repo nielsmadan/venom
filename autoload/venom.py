@@ -3,6 +3,8 @@ import os
 
 import vim
 import vim_opt
+import vim_g
+import vim_fn
 
 
 fn_proxy = {}
