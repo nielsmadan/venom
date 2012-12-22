@@ -67,17 +67,27 @@ xnoremap = _create_mapping_fn("xnoremap")
 #     def __init__(self, line, col):
 #         self.line = line
 #         self.col = col
-# 
-# 
+
+
 def get_selection_coords():
     start_line, start_col = vim.eval("getpos(\"'<\")")[1:3]
     end_line, end_col = vim.eval("getpos(\"'>\")")[1:3]
 
-    return ((start_line, start_col), (end_line, end_col))
+    return ((int(start_line) - 1, int(start_col) - 1), (int(end_line) - 1, int(end_col) - 1))
 
-def get_visual_selection():
-    print get_selection_coords()
+
+def get_visual_selection(read_only=False):
+    ((start_line, start_col), (end_line, end_col)) = get_selection_coords()
+    if read_only:
+        buf = vim.current.buffer
+        if start_line == end_line:
+            return [buf[start_line][start_col:end_col + 1]]
+        elif start_line + 1 == end_line:
+            return [buf[start_line][start_col:]] + [buf[end_line][:end_col + 1]]
+        else:
+            return [buf[start_line][start_col:]] + buf[start_line + 1:end_line] + [buf[end_line][:end_col + 1]]
 
 
 def get_current_line(read_only=True):
-    return vim.eval('getline(".")')
+    if read_only:
+        return vim.eval('getline(".")')
