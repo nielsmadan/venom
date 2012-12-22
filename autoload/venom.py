@@ -7,6 +7,8 @@ import vim_opt
 
 fn_proxy = {}
 PROXY_INDEX = 0
+wrap_proxy = {}
+WRAP_INDEX = 0
 
 
 def include_guard(name):
@@ -15,7 +17,7 @@ def include_guard(name):
     return res
 
 
-def run(sfile, module_name):
+def import_py(sfile, module_name):
     sys.path.append(os.path.dirname(sfile))
 
     __import__(module_name)
@@ -29,6 +31,20 @@ def add_path(sfile):
 
 def rm_path(sfile):
     sys.path.remove(os.path.dirname(sfile))
+
+
+def py_fn_to_vim_function(vimscript_fn_name, py_fn):
+    global WRAP_INDEX
+    wrap_proxy[WRAP_INDEX] = py_fn
+    vim.command("function! g:%s()\npy venom.wrap_proxy[%d]()\nendfunction" % (vimscript_fn_name, WRAP_INDEX))
+    WRAP_INDEX += 1
+
+
+def py_fn_to_vim_command(command_name, py_fn):
+    global WRAP_INDEX
+    wrap_proxy[WRAP_INDEX] = py_fn
+    vim.command("command! %s :py venom.wrap_proxy[%d]()" % (command_name, WRAP_INDEX))
+    WRAP_INDEX += 1
 
 
 def _create_mapping_fn(map_cmd):

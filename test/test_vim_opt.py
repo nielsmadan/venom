@@ -6,8 +6,6 @@ import vim_stub
 
 import vim
 
-vim.command = lambda *args, **kwargs: None
-
 import autoload.venom as venom
 
 
