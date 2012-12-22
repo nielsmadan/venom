@@ -46,7 +46,6 @@ def py_fn_to_vim_function(vimscript_fn_name, py_fn):
 def py_fn_to_vim_command(command_name, py_fn, allow_range=False):
     args = ""
     if allow_range:
-        print "ADDING RANGE"
         args += "-range"
     global WRAP_INDEX
     wrap_proxy[WRAP_INDEX] = py_fn
