@@ -1,14 +1,32 @@
 # TODOs
 
+## version 0.9
+
+### vim extension module
+
+* `[ ]` completion
+* `[ ]` conceal
+* `[ ]` balloons
+* `[ ]` status line
+* `[ ]` windows
+* `[ ]` buffers
+* `[ ]` folding
+* `[ ]` gui tabs
+
+### misc
+
+* `[ ]` look into cscope
+* `[ ]` look into diffexpr
+
 ## version 0.5
 
-### vim module
+### vim extension module
 
 * `[ ]` normal mode interface
 
 ## version 0.2
 
-### vim module
+### vim extension module
 
 * `[>]` options
 * `[ ]` functions

@@ -16,22 +16,6 @@ Contents:
    venom
 
 
-TODOs
------
-
-* completion
-* conceal
-* cscope
-* diffexpr
-* balloons
-* status line
-* windows
-* buffers
-* folding
-* gui tabs
-
-
-
 Indices and tables
 ==================
 
