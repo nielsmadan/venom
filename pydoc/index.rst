@@ -11,7 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   vim-opt
+   vim
+   vim-ext
+   venom
 
 
 TODOs
