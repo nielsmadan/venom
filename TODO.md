@@ -14,6 +14,7 @@
 * `[ ]` functions
 * `[X]` globals
 * `[ ]` mapping commands
+* `[ ]` registers
 
 ### venom module
 

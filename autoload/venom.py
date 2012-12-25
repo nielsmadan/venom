@@ -2,10 +2,8 @@ import sys
 import os
 
 import vim
-import vim_opt
-import vim_g
-import vim_fn
-import vim_map
+import vim_ext
+vim_ext.extend_vim()
 
 
 fn_proxy = {}
@@ -44,10 +42,10 @@ def py_fn_to_vim_function(vimscript_fn_name, py_fn):
 
 
 def py_fn_to_vim_command(command_name, py_fn, allow_range=False):
+    global WRAP_INDEX
     args = ""
     if allow_range:
         args += "-range"
-    global WRAP_INDEX
     wrap_proxy[WRAP_INDEX] = py_fn
     vim.command("command! %s %s :py venom.wrap_proxy[%d]()" % (args, command_name, WRAP_INDEX))
     WRAP_INDEX += 1

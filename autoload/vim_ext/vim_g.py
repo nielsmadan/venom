@@ -9,7 +9,7 @@ class _g(object):
         # print "TRYING TO SET g:%s to %s" % (name, val)
         vim.command("let g:%s=%s" % (name, val))
 
-    def is_defined(self, name):
+    def __contains__(self, name):
         return vim.fn.exists("g:" + name)
 
 vim.g = _g()
