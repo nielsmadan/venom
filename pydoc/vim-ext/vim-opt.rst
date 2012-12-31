@@ -1,8 +1,8 @@
 Vim Options
 ===========
 
-Venom allows setting and reading vim options in python through the `vim.opt` add-in interface. Any option from the
-`official vim documentation`_ can be set. Boolean options take `True` or `False` parameters, number options take
+Venom allows setting and reading vim options in python through the ``vim.opt`` add-in interface. Any option from the
+`official vim documentation`_ can be set. Boolean options take ``True`` or ``False`` parameters, number options take
 numbers and string options take strings.
 
 Example::

@@ -30,6 +30,7 @@
 
 * `[>]` options
 * `[ ]` functions
+    * `[ ]` look into variable functions
 * `[X]` globals
 * `[ ]` mapping commands
 * `[ ]` registers
