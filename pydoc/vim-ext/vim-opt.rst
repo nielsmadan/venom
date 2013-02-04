@@ -73,6 +73,27 @@ should read the full full documentation. This list is intended just as a high le
 * **guifont**: list of fonts to try in gvim.
 * **guitablabel**: text to display in the gui tab pages line.
 * **highlight**: set highlighting mode.
+* **hlsearch**: when there is a previous search pattern, highlight all matches.
+* **ignorecase**: ignore case in search and tags.
+* **include**: pattern to be used to find an include command with "[i" or "]I".
+* **includeexpr**: expression to be used to transform include statement to filename.
+* **incsearch**: show matched pattern while typing a search.
+* **indentexpr**: expression used to obtain proper indent of a line.
+* **indentkeys**: keys used to indenting in insert mode.
+* **isfname**: characters to include in file and path names (e.g. for 'gf' command).
+* **isindent**: characters to include for identifiers.
+* **iskeyword**: characters to include in keywords.
+* **isprint**: characters to display directly on screen. 
+* **key**: key that is used to encrypting the current buffer.
+* **keymap**: name of a keyboard mapping.
+* **keywordprg**: program to use to lookup keyword under cursor ('K' command).
+* **laststatus**: when to show status line on last window.
+* **lazyredraw**: redraw while executing macros / registers / other commands
+* **linebreak**: wrap long lines only at character in 'breakat' (only affect display).
+* **lines**: number of lines of Vim window.
+* **linespace**: number of pixel lines inserted between characters.
+* **list**: show whitespace.
+* **listchars**: characters used to display whitespace.
 * **asdf**:
 
 Folding
@@ -162,10 +183,24 @@ These two lists should cover every options there is (according to the official d
 * **helpheight**: minimal initial height of help window.
 * **helplang**: list of desired languages for help.
 * **hidden**: abandon buffer when unloading.
-* **hlsearch**: highlight search matches.
 * **history**: how many commands / searches to remember.
 * **hkmap**: map for Hebrew character set.
 * **hkmapp**: use phonetic keyboard mapping.
+* **icon**: set window icon.
+* **imactivatekey**: specify key used by X-Windows for Input Method (IM) activation.
+* **imcmdline**: Input Method is always on when editting a command line.
+* **imdisable**: never use Input Method.
+* **iminsert**: use :lmap or Input Method in Insert mode.
+* **imsearch**: use :lmap or Input Method when entering a search pattern.
+* **infercase**: change letter cases of match when doing keyword completion with ignorecase.
+* **insertmode**: make insert mode the default.
+* **joinspaces**: add two spaces when joining lines that end with a '.', '?', or '!'.
+* **keymodel**: possibility to have a shifted key (cursors, <End>, <PageUp>, etc.) start visual mode.
+* **langmap**: switch key into a special language mode.
+* **langmenu**: language to use for menu translation.
+* **lisp**: enable lisp indentation in insert mode.
+* **listwords**: words that influence lisp indenting.
+* **loadplugins**: enable loading of plugins.
 * **asdf**:
 
 .. _official vim documentation: http://vimdoc.sourceforge.net/htmldoc/options.html#option-summary

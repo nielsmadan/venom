@@ -17,6 +17,8 @@
 
 * `[ ]` look into cscope
 * `[ ]` look into diffexpr
+* `[ ]` look into icons (icon / iconstring options)
+* `[ ]` look into Input Method in X-Windows (imactivatekey)
 
 ## version 0.5
 

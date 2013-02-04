@@ -7,14 +7,18 @@ _BOOL_OPTS = set(('allowrevins', 'altkeymap', 'antialias', 'autochdir', 'arabic'
                   'cursorbind', 'cursorcolumn', 'cursorline', 'delcombine', 'diff', 'digraph',
                   'edcompatible', 'endofline', 'equalalways', 'equalprg', 'errorbells', 'esckeys',
                   'expandtab', 'exrc', 'fkmap', 'foldenable', 'fsync', 'gdefault', 'guipty',
-                  'hidden', 'hlsearch', 'hkmap', 'hkmapp', 
+                  'hidden', 'hlsearch', 'hkmap', 'hkmapp', 'icon', 'ignorecase', 'imcmdline', 'imdisable',
+                  'incsearch', 'infercase', 'insertmode', 'joinspaces', 'lazyredraw', 'linebreak', 'lisp',
+                  'list', 'loadplugins',
 
                   'number',
                   ))
 
 _NUM_OPTS = set(('aleph', 'balloondelay', 'cmdheight', 'cmdwinheight', 'columns', 'concellevel',
                  'cscopepathcomp', 'cscopetagorder', 'foldcolumn', 'foldlevel', 'foldlevelstart',
-                 'foldminlines', 'foldnestmax', 'guiheadroom', 'history', 
+                 'foldminlines', 'foldnestmax', 'guiheadroom', 'history', 'iminsert', 'imsearch',
+                 'laststatus', 'lines', 'linespace',
+
                  ))
 
 _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdir', 'backupext',
@@ -30,7 +34,10 @@ _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdi
                  'formatlistpat', 'formatprg', 'formatexpr', 'grepformat', 'grepprg',
                  'guicursor', 'guifont', 'guifontset', 'guifontwide', 'guioptions',
                  'guitablabel', 'guitabtooltip', 'helpfile', 'helpheight', 'helplang',
-                 'highlight', 
+                 'highlight', 'iconstring', 'imactivatekey', 'include', 'includeexpr', 'indentexpr',
+                 'indentkeys', 'isfname', 'isindent', 'iskeyword', 'isprint', 'key', 'keymap',
+                 'keymodel', 'keywordprg', 'langmap', 'langmenu', 'lispwords', 'listchars'
+
                  ))
 
 
