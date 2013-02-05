@@ -35,7 +35,9 @@ class _fn(object):
 
 
     def exists(self, name):
-        # print "CHECKING FOR %s" % name
         return vim.eval('exists("%s")' % name) == "1"
+
+    def input(self, prompt, default='', comletion_type=None):
+        return vim.eval('input("%s", "%s")' % (prompt, default))
 
 vim.fn = _fn()
