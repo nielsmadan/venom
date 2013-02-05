@@ -6,7 +6,6 @@ class _g(object):
         return vim.eval("g:%s" % name)
 
     def __setattr__(self, name, val):
-        # print "TRYING TO SET g:%s to %s" % (name, val)
         vim.command("let g:%s=%s" % (name, val))
 
     def __contains__(self, name):

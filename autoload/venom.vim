@@ -27,6 +27,4 @@ function! venom#Load()
     let g:venom_loaded = 1
 
     call venom#Import(s:sfile, "venom")
-
-    echom "VENOM LOADED"
 endfunction
