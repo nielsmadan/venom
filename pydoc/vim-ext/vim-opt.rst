@@ -94,6 +94,28 @@ should read the full full documentation. This list is intended just as a high le
 * **linespace**: number of pixel lines inserted between characters.
 * **list**: show whitespace.
 * **listchars**: characters used to display whitespace.
+* **magic**: change special characters in regex patterns.
+* **makeef**: name of error file for make command.
+* **makeprg**: program to use for make command.
+* **matchpairs**: characters that form pairs for '%' command.
+* **matchtime**: tenths of second to show matching paren for 'showmatch'.
+* **modifiable**: allow changing of buffer contents (and setting fileformat / fileencoding).
+* **modified**: consider buffer to have been modified.
+* **number**: print line numbers in front of each line.
+* **numberwidth**: minimum number of columns for number column.
+* **omnifunc**: function to use for insert mode omni completion.
+* **operatorfunc**: function to be called with 'g@'.
+* **paragraphs**: specify the nroff macros that separate paragraphs.
+* **paste**: enable paste mode to make pasting more sensible (especially in terminal).
+* **pastetoggle**: mapping to use to toggle paste.
+* **patchexpr**: expression to evaluate when applying a patch.
+* **patchmode**: create a backup when first writing a file.
+* **path**: paths to search for relative path files.
+* **previewheight**: default height for preview window.
+* **previewwindow**: set a window to be the preview window (usually not set directly).
+* **prompt**: use ':' prompt in Ex mode.
+* **pumheight**: maximum number of items to show in pop-up for insert mode completion.
+* **quoteescape**: characters that are used to escape quotes in a string.
 * **asdf**:
 
 Folding
@@ -201,6 +223,41 @@ These two lists should cover every options there is (according to the official d
 * **lisp**: enable lisp indentation in insert mode.
 * **listwords**: words that influence lisp indenting.
 * **loadplugins**: enable loading of plugins.
+* **macatsui**: workaround for drawing problems
+* **maxcombine**: maximum number of combined characters for displaying (in utf-8).
+* **maxfuncdepth**: maximum depth of function calls for user defined functions.
+* **maxmapdepth**: maximum number of mappings (in circular maps for example).
+* **maxmem**: maximum amount of memory to be used for one buffer.
+* **maxmempattern**: maximum amount of memory used for pattern matching.
+* **maxmemtot**: maximum amount of memory to be used for all buffers.
+* **menuitems**: maximum number of menu items for menus generated from lists (e. g. list of buffers).
+* **mkspellmem**: set when to start compressing word tree (for languages with lots of words).
+* **modeline**: enable modelines (setting vim options inside files).
+* **modelines**: number of lines to check at the beginning and end of files for modelines.
+* **more**: pause listings and show more-prompt when screen is filled.
+* **mouse**: enable use of mouse in terminals.
+* **mousefocus**: automatically activate window that the mouse pointer is in.
+* **mousehide**: hide mouse pointer when characters are typed.
+* **mousemodel**: set what the right mouse button is used for.
+* **mouseshape**: set the shape of the mouse in different modes.
+* **mousetime**: time between mouse clicks for double-click.
+* **mzquantum**: msecs between polls of MzScheme threads.
+* **nrformats**: what vim considers numbers for CTRL-A and CTRL-X commands.
+* **opendevice**: enable reading and writing from devices.
+* **osfiletype**: deprecated option for RISC OS.
+* **preserveindent**: when changing indent of the current line, re-use whatever whitespace is available to get to the new indentation.
 * **asdf**:
+
+Printing
+````````
+* **printdevice**: device to use for printing.
+* **printencoding**: character encoding to use for printing.
+* **printexpr**: expression to be used to print the PostScript.
+* **printfont**: font to use for printing.
+* **printheader**: format for header for prints.
+* **printmbcharset**: CJK character set to be used for CJK output.
+* **printmbfont**: list of fonts to be used for CJK output.
+* **printoptions**: list of format options for printing.
+
 
 .. _official vim documentation: http://vimdoc.sourceforge.net/htmldoc/options.html#option-summary

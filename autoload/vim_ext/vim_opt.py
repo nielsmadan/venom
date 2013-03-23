@@ -9,15 +9,18 @@ _BOOL_OPTS = set(('allowrevins', 'altkeymap', 'antialias', 'autochdir', 'arabic'
                   'expandtab', 'exrc', 'fkmap', 'foldenable', 'fsync', 'gdefault', 'guipty',
                   'hidden', 'hlsearch', 'hkmap', 'hkmapp', 'icon', 'ignorecase', 'imcmdline', 'imdisable',
                   'incsearch', 'infercase', 'insertmode', 'joinspaces', 'lazyredraw', 'linebreak', 'lisp',
-                  'list', 'loadplugins',
+                  'list', 'loadplugins', 'macatsui', 'magic', 'modeline', 'modifiable', 'modified',
+                  'more', 'mouse', 'mousefocus', 'mousehide', 'number', 'opendevice', 'paste',
+                  'preserveindent', 'previewwindow', 'prompt', 
 
-                  'number',
                   ))
 
 _NUM_OPTS = set(('aleph', 'balloondelay', 'cmdheight', 'cmdwinheight', 'columns', 'concellevel',
                  'cscopepathcomp', 'cscopetagorder', 'foldcolumn', 'foldlevel', 'foldlevelstart',
                  'foldminlines', 'foldnestmax', 'guiheadroom', 'history', 'iminsert', 'imsearch',
-                 'laststatus', 'lines', 'linespace',
+                 'laststatus', 'lines', 'linespace', 'matchtime', 'maxcombine', 'maxfuncdepth',
+                 'maxmem', 'maxmempattern', 'maxmemtot', 'menuitems', 'modelines', 'mousetime',
+                 'mzquantum', 'numberwidth', 'previewheight', 'pumheight', 
 
                  ))
 
@@ -36,7 +39,12 @@ _STR_OPTS = set(('ambiwidth', 'background', 'backspace', 'backupcopy', 'backupdi
                  'guitablabel', 'guitabtooltip', 'helpfile', 'helpheight', 'helplang',
                  'highlight', 'iconstring', 'imactivatekey', 'include', 'includeexpr', 'indentexpr',
                  'indentkeys', 'isfname', 'isindent', 'iskeyword', 'isprint', 'key', 'keymap',
-                 'keymodel', 'keywordprg', 'langmap', 'langmenu', 'lispwords', 'listchars'
+                 'keymodel', 'keywordprg', 'langmap', 'langmenu', 'lispwords', 'listchars',
+                 'makeef', 'makeprg', 'matchpairs', 'mkspellmem', 'mousemodel', 'mouseshape', 
+                 'nrformats', 'omnifunc', 'operatorfunc', 'osfiletype', 'paragraphs', 'pastetoggle',
+                 'patchexpr', 'patchmode', 'path', 'printdevice', 'printencoding', 'printexpr',
+                 'printfont', 'printheader', 'printmbcharset', 'printmbfont', 'printoptions', 
+                 'quoteescape', 
 
                  ))
 
