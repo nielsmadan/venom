@@ -92,6 +92,13 @@ def get_visual_selection(read_only=False):
             return [buf[start_line][start_col:]] + buf[start_line + 1:end_line] + [buf[end_line][:end_col + 1]]
 
 
+def replace_visual_selection(text):
+    tmp = vim.registers.a
+    vim.registers.a = text
+    vim.command("normal gv\"ap")
+    vim.registers.a = tmp
+
+
 def get_current_line(read_only=True):
     if read_only:
         return vim.eval('getline(".")')
