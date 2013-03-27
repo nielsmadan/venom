@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Vim Options &mdash; venom 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="venom 0.2 documentation" href="../index.html" />
+    <link rel="up" title="Python Interface Extension" href="../vim-ext.html" />
+    <link rel="next" title="Vimscript Functions" href="vim-fn.html" />
+    <link rel="prev" title="Python Interface Extension" href="../vim-ext.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="vim-fn.html" title="Vimscript Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../vim-ext.html" title="Python Interface Extension"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">venom 0.2 documentation</a> &raquo;</li>
+          <li><a href="../vim-ext.html" accesskey="U">Python Interface Extension</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="vim-options">
+<h1>Vim Options<a class="headerlink" href="#vim-options" title="Permalink to this headline">¶</a></h1>
+<p>Venom allows setting and reading vim options in python through the <tt class="docutils literal"><span class="pre">vim.opt</span></tt> add-in interface. Any option from the
+<a class="reference external" href="http://vimdoc.sourceforge.net/htmldoc/options.html#option-summary">official vim documentation</a> can be set. Boolean options take <tt class="docutils literal"><span class="pre">True</span></tt> or <tt class="docutils literal"><span class="pre">False</span></tt> parameters, number options take
+numbers and string options take strings.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">vim</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="bp">True</span>                    <span class="c"># show line numbers</span>
+<span class="k">print</span> <span class="n">vim</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">number</span>                     <span class="c"># prints &#39;True&#39;</span>
+<span class="n">vim</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">vim</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">number</span>      <span class="c"># toggle options, number is now &#39;False&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="summary-of-useful-options">
+<h2>Summary of Useful Options<a class="headerlink" href="#summary-of-useful-options" title="Permalink to this headline">¶</a></h2>
+<p>Vim includes a stupendous amount of options, many of which are somewhat niche or not useful for writing plugins. So here is a non-authoritative list
+of the more generally useful options to give you a quick idea of what&#8217;s available. Before using any of these, you
+should read the full full documentation. This list is intended just as a high level overview.</p>
+<ul class="simple">
+<li><strong>autochdir</strong>: automatically change dir to dir of file associated with current buffer.</li>
+<li><strong>autoindent</strong>: copy indent from current line when starting a new line.</li>
+<li><strong>autoread</strong>: update buffer automatically if file has changed outside of vim.</li>
+<li><strong>autowrite</strong>: automatically write a buffer to file on certain actions.</li>
+<li><strong>autowriteall</strong>: automatically write all buffers on leaving vim.</li>
+<li><strong>backspace</strong>: set backspace to move over indents, eols and start of insert (whatever that means).</li>
+<li><strong>balloondelay</strong>: delay in msecs until balloon pops up.</li>
+<li><strong>ballooneval</strong>: display debug information in pop up. (<a class="reference external" href="http://vimdoc.sourceforge.net/htmldoc/debugger.html#balloon-eval">see here</a>)</li>
+<li><strong>balloonexpr</strong>: interface to ballooneval.</li>
+<li><strong>binary</strong>: for editing binary files.</li>
+<li><strong>breakat</strong>: choose which characters to linebreak on.</li>
+<li><strong>browsedir</strong>: choose which dir to use for the file browser.</li>
+<li><strong>bufhidden</strong>: what to do when a buffer is not shown in a window any more.</li>
+<li><strong>buflisted</strong>: choose to show (or not to show) a buffer in the buffer list.</li>
+<li><strong>buftype</strong>: set the type of buffer (e.g. &#8216;nowrite&#8217;, &#8216;quickfix&#8217;, etc.)</li>
+<li><strong>casemap</strong>: how to change the case of letters</li>
+<li><strong>cdpath</strong>: which directories to search when using :cd and :lcd.</li>
+<li><strong>clipboard</strong>: clipboard options.</li>
+<li><strong>cmdheight</strong>: number of lines to use for command-line.</li>
+<li><strong>cmdwinheight</strong>: number of lines to use for command line window.</li>
+<li><strong>colorcolumn</strong>: where to draw color columns.</li>
+<li><strong>columns</strong>: number of columns, window width in gvim.</li>
+<li><strong>complete</strong>: specify how insert completion works.</li>
+<li><strong>completefunc</strong>: specify function for insert completion.</li>
+<li><strong>completeopt</strong>: options for insert completion.</li>
+<li><strong>cursorbind</strong>: cursor in current window moves other cursorbound windows.</li>
+<li><strong>cursorcolumn</strong>: highlight column cursor is in.</li>
+<li><strong>cursorline</strong>: highlight line cursor is in.</li>
+<li><strong>debug</strong>: options for more verbose errors.</li>
+<li><strong>dictionary</strong>: file names to look up words for keyword completion.</li>
+<li><strong>diff</strong>: add current window to diffing window group.</li>
+<li><strong>diffopt</strong>: options for diff mode.</li>
+<li><strong>eadirection</strong>: option when equalalways applies.</li>
+<li><strong>encoding</strong>: character encoding used inside vim.</li>
+<li><strong>equalalways</strong>: automatically make windows same size.</li>
+<li><strong>equalprg</strong>: external program to use for &#8216;=&#8217; command.</li>
+<li><strong>errorfile</strong>: name of errorfile for quickfix mode.</li>
+<li><strong>errorformat</strong>: Scanf-like description of format of error file.</li>
+<li><strong>eventignore</strong>: list of event names to ignore.</li>
+<li><strong>expandtab</strong>: replace tabs with spaces.</li>
+<li><strong>fileencoding</strong>: set character encoding for file in buffer.</li>
+<li><strong>fileformat</strong>: give the end of line for the current buffer.</li>
+<li><strong>filetype</strong>: manually set filetype.</li>
+<li><strong>fillchars</strong>: characters to use to fill separators, foldtext markers.</li>
+<li><strong>formatoptions</strong>: options for automatic formatting.</li>
+<li><strong>formatlistpat</strong>: how to recognize a list header for automatic formatting.</li>
+<li><strong>formatprg</strong>: program to use for the &#8216;gq&#8217; operator.</li>
+<li><strong>formatexpr</strong>: used to format a range of lines with &#8216;gq&#8217; operator.</li>
+<li><strong>grepformat</strong>: scanf like format to use for grep output.</li>
+<li><strong>grepprg</strong>: program to use for grep command.</li>
+<li><strong>guicursor</strong>: change look of cursor in different modes.</li>
+<li><strong>guifont</strong>: list of fonts to try in gvim.</li>
+<li><strong>guitablabel</strong>: text to display in the gui tab pages line.</li>
+<li><strong>highlight</strong>: set highlighting mode.</li>
+<li><strong>hlsearch</strong>: when there is a previous search pattern, highlight all matches.</li>
+<li><strong>ignorecase</strong>: ignore case in search and tags.</li>
+<li><strong>include</strong>: pattern to be used to find an include command with &#8220;[i&#8221; or &#8220;]I&#8221;.</li>
+<li><strong>includeexpr</strong>: expression to be used to transform include statement to filename.</li>
+<li><strong>incsearch</strong>: show matched pattern while typing a search.</li>
+<li><strong>indentexpr</strong>: expression used to obtain proper indent of a line.</li>
+<li><strong>indentkeys</strong>: keys used to indenting in insert mode.</li>
+<li><strong>isfname</strong>: characters to include in file and path names (e.g. for &#8216;gf&#8217; command).</li>
+<li><strong>isindent</strong>: characters to include for identifiers.</li>
+<li><strong>iskeyword</strong>: characters to include in keywords.</li>
+<li><strong>isprint</strong>: characters to display directly on screen.</li>
+<li><strong>key</strong>: key that is used to encrypting the current buffer.</li>
+<li><strong>keymap</strong>: name of a keyboard mapping.</li>
+<li><strong>keywordprg</strong>: program to use to lookup keyword under cursor (&#8216;K&#8217; command).</li>
+<li><strong>laststatus</strong>: when to show status line on last window.</li>
+<li><strong>lazyredraw</strong>: redraw while executing macros / registers / other commands</li>
+<li><strong>linebreak</strong>: wrap long lines only at character in &#8216;breakat&#8217; (only affect display).</li>
+<li><strong>lines</strong>: number of lines of Vim window.</li>
+<li><strong>linespace</strong>: number of pixel lines inserted between characters.</li>
+<li><strong>list</strong>: show whitespace.</li>
+<li><strong>listchars</strong>: characters used to display whitespace.</li>
+<li><strong>magic</strong>: change special characters in regex patterns.</li>
+<li><strong>makeef</strong>: name of error file for make command.</li>
+<li><strong>makeprg</strong>: program to use for make command.</li>
+<li><strong>matchpairs</strong>: characters that form pairs for &#8216;%&#8217; command.</li>
+<li><strong>matchtime</strong>: tenths of second to show matching paren for &#8216;showmatch&#8217;.</li>
+<li><strong>modifiable</strong>: allow changing of buffer contents (and setting fileformat / fileencoding).</li>
+<li><strong>modified</strong>: consider buffer to have been modified.</li>
+<li><strong>number</strong>: print line numbers in front of each line.</li>
+<li><strong>numberwidth</strong>: minimum number of columns for number column.</li>
+<li><strong>omnifunc</strong>: function to use for insert mode omni completion.</li>
+<li><strong>operatorfunc</strong>: function to be called with &#8216;g&#64;&#8217;.</li>
+<li><strong>paragraphs</strong>: specify the nroff macros that separate paragraphs.</li>
+<li><strong>paste</strong>: enable paste mode to make pasting more sensible (especially in terminal).</li>
+<li><strong>pastetoggle</strong>: mapping to use to toggle paste.</li>
+<li><strong>patchexpr</strong>: expression to evaluate when applying a patch.</li>
+<li><strong>patchmode</strong>: create a backup when first writing a file.</li>
+<li><strong>path</strong>: paths to search for relative path files.</li>
+<li><strong>previewheight</strong>: default height for preview window.</li>
+<li><strong>previewwindow</strong>: set a window to be the preview window (usually not set directly).</li>
+<li><strong>prompt</strong>: use &#8216;:&#8217; prompt in Ex mode.</li>
+<li><strong>pumheight</strong>: maximum number of items to show in pop-up for insert mode completion.</li>
+<li><strong>quoteescape</strong>: characters that are used to escape quotes in a string.</li>
+<li><strong>asdf</strong>:</li>
+</ul>
+<div class="section" id="folding">
+<h3>Folding<a class="headerlink" href="#folding" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>foldclose</strong>: automatic fold closing when cursor is not in them.</li>
+<li><strong>foldcolumn</strong>: show column at the side of window indicating open / closed folds.</li>
+<li><strong>foldenable</strong>: enable folding.</li>
+<li><strong>foldexpr</strong>: expression used when foldmethod is expr.</li>
+<li><strong>foldignore</strong>: pattern for lines to get their foldlevel from surrounding lines.</li>
+<li><strong>foldlevel</strong>: set the foldlevel.</li>
+<li><strong>foldlevelstart</strong>: set foldlevel when starting to edit a buffer.</li>
+<li><strong>foldmarker</strong>: start and endmarker when using foldmethod marker.</li>
+<li><strong>foldmethod</strong>: foldmethod for current window.</li>
+<li><strong>foldminlines</strong>: number of screen lines above which a fold can be displayed closed.</li>
+<li><strong>foldnestmax</strong>: maximum nesting of folds.</li>
+<li><strong>foldopen</strong>: specify for which commands folds will be opened.</li>
+<li><strong>foldtext</strong>: text to display for folded text.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="summary-of-maybe-not-so-useful-options">
+<h2>Summary of Maybe-not-so-useful Options<a class="headerlink" href="#summary-of-maybe-not-so-useful-options" title="Permalink to this headline">¶</a></h2>
+<p>And here is another list of the intriguing but not immediately useful options for writing plugins.
+These two lists should cover every options there is (according to the official docs).</p>
+<ul class="simple">
+<li><strong>aleph</strong>: for Hebrew mode.</li>
+<li><strong>allowrevins</strong>: how to get into reverse insert mode.</li>
+<li><strong>altkeymap</strong>: second language is Farsi.</li>
+<li><strong>ambiwidth</strong>: what to do with characters where the width is ambiguous.</li>
+<li><strong>antialias</strong>: font anti aliasing on the Mac.</li>
+<li><strong>arabic</strong>: set this to edit Arabic text.</li>
+<li><strong>arabicshape</strong>: visual corrections for Arabic characters.</li>
+<li><strong>background</strong>: &#8216;dark&#8217; or &#8216;light&#8217; background color.</li>
+<li><strong>backup</strong>: make back up before overwriting a file.</li>
+<li><strong>backupcopy</strong>: how to make a backup.</li>
+<li><strong>backupdir</strong>: where to make a backup.</li>
+<li><strong>backupext</strong>: string to append to backup file name.</li>
+<li><strong>backupskip</strong>: which files not to back up.</li>
+<li><strong>bioskey</strong>: call bios to obtain a keyboard character.</li>
+<li><strong>bomb</strong>: prepend byte order mark to file.</li>
+<li><strong>cedit</strong>: key used to open command line window in command mode.</li>
+<li><strong>charconvert</strong>: expression for character encoding conversion.</li>
+<li><strong>cindent</strong>: enable indentation for C.</li>
+<li><strong>cinkeys</strong>: what keys to re-indent on if cindent is enabled.</li>
+<li><strong>cinoptions</strong>: how to cindent.</li>
+<li><strong>cinwords</strong>: words that start extra indent on next line.</li>
+<li><strong>comments</strong>: characters that can start a comment line.</li>
+<li><strong>commentstring</strong>: template for comments for folding.</li>
+<li><strong>compatible</strong>: make vim more vi compatible.</li>
+<li><strong>concealcursor</strong>: set modes in which text in the cursor line can be concealed.</li>
+<li><strong>conceallevel</strong>: how to show concealed text.</li>
+<li><strong>confirm</strong>: raise dialog to confirm saving.</li>
+<li><strong>conskey</strong>: use direct console I/O to obtain keyboard characters (see bioskey).</li>
+<li><strong>copyindent</strong>: copy structure of existing lines when auto indenting.</li>
+<li><strong>cpoptions</strong>: when to be vi compatible.</li>
+<li><strong>cryptmethod</strong>: method to use to encrypt when writing encrypted file.</li>
+<li><strong>cscopepathcomp</strong>: how many components of path to show.</li>
+<li><strong>cscopeprg</strong>: specify command to execute cscope.</li>
+<li><strong>cscopequickfix</strong>: show cscope results in quickfix.</li>
+<li><strong>cscoperelative</strong>: use basename of cscope.out path as prefix.</li>
+<li><strong>cscopetag</strong>: use cscope for tag commands.</li>
+<li><strong>cscopetagorder</strong>: specify order in which :cstag performs search.</li>
+<li><strong>cscopeverbose</strong>: give message when adding database.</li>
+<li><strong>define</strong>: pattern to use to find macro definitions.</li>
+<li><strong>delcombine</strong>: in unicode, option to delete combined character.</li>
+<li><strong>diffexpr</strong>: expression to evaluate to get ed-style diff file.</li>
+<li><strong>digraph</strong>: enable entering of digraphs in insert mode.</li>
+<li><strong>directory</strong>: list of dir names for the swap file.</li>
+<li><strong>display</strong>: how to display a last line that does not fit.</li>
+<li><strong>edcompatible</strong>: make substitute work like in ed.</li>
+<li><strong>endofline</strong>: write end of line at end of file.</li>
+<li><strong>errorbells</strong>: beep or screen flash on errors.</li>
+<li><strong>esckeys</strong>: Function keys are recognized in insert mode.</li>
+<li><strong>exrc</strong>: enable reading of rc files in current directory.</li>
+<li><strong>fileencodings</strong>: list of character encodings to consider when opening a file.</li>
+<li><strong>fileformats</strong>: end of line characters to try when opening a buffer.</li>
+<li><strong>fkmap</strong>: map for farsi.</li>
+<li><strong>fsync</strong>: use fsync to ensure data is written to disk (on by default).</li>
+<li><strong>gdefault</strong>: default to substituting all matches on a line with :substitute.</li>
+<li><strong>guifontset</strong>: specifies two fonts, one for English, one for another language.</li>
+<li><strong>guifontwide</strong>: list of fonts to be used for double width characters.</li>
+<li><strong>guiheadroom</strong>: number of pixels to leave at the top when fitting the gui window on screen.</li>
+<li><strong>guioptions</strong>: options to load gui components and gui behavior.</li>
+<li><strong>guipty</strong>: try to use pseudo-tty for shell commands (default on).</li>
+<li><strong>guitabtooltip</strong>: tooltip for gui tab pages line.</li>
+<li><strong>helpfile</strong>: file path to main help file.</li>
+<li><strong>helpheight</strong>: minimal initial height of help window.</li>
+<li><strong>helplang</strong>: list of desired languages for help.</li>
+<li><strong>hidden</strong>: abandon buffer when unloading.</li>
+<li><strong>history</strong>: how many commands / searches to remember.</li>
+<li><strong>hkmap</strong>: map for Hebrew character set.</li>
+<li><strong>hkmapp</strong>: use phonetic keyboard mapping.</li>
+<li><strong>icon</strong>: set window icon.</li>
+<li><strong>imactivatekey</strong>: specify key used by X-Windows for Input Method (IM) activation.</li>
+<li><strong>imcmdline</strong>: Input Method is always on when editting a command line.</li>
+<li><strong>imdisable</strong>: never use Input Method.</li>
+<li><strong>iminsert</strong>: use :lmap or Input Method in Insert mode.</li>
+<li><strong>imsearch</strong>: use :lmap or Input Method when entering a search pattern.</li>
+<li><strong>infercase</strong>: change letter cases of match when doing keyword completion with ignorecase.</li>
+<li><strong>insertmode</strong>: make insert mode the default.</li>
+<li><strong>joinspaces</strong>: add two spaces when joining lines that end with a &#8216;.&#8217;, &#8216;?&#8217;, or &#8216;!&#8217;.</li>
+<li><strong>keymodel</strong>: possibility to have a shifted key (cursors, &lt;End&gt;, &lt;PageUp&gt;, etc.) start visual mode.</li>
+<li><strong>langmap</strong>: switch key into a special language mode.</li>
+<li><strong>langmenu</strong>: language to use for menu translation.</li>
+<li><strong>lisp</strong>: enable lisp indentation in insert mode.</li>
+<li><strong>listwords</strong>: words that influence lisp indenting.</li>
+<li><strong>loadplugins</strong>: enable loading of plugins.</li>
+<li><strong>macatsui</strong>: workaround for drawing problems</li>
+<li><strong>maxcombine</strong>: maximum number of combined characters for displaying (in utf-8).</li>
+<li><strong>maxfuncdepth</strong>: maximum depth of function calls for user defined functions.</li>
+<li><strong>maxmapdepth</strong>: maximum number of mappings (in circular maps for example).</li>
+<li><strong>maxmem</strong>: maximum amount of memory to be used for one buffer.</li>
+<li><strong>maxmempattern</strong>: maximum amount of memory used for pattern matching.</li>
+<li><strong>maxmemtot</strong>: maximum amount of memory to be used for all buffers.</li>
+<li><strong>menuitems</strong>: maximum number of menu items for menus generated from lists (e. g. list of buffers).</li>
+<li><strong>mkspellmem</strong>: set when to start compressing word tree (for languages with lots of words).</li>
+<li><strong>modeline</strong>: enable modelines (setting vim options inside files).</li>
+<li><strong>modelines</strong>: number of lines to check at the beginning and end of files for modelines.</li>
+<li><strong>more</strong>: pause listings and show more-prompt when screen is filled.</li>
+<li><strong>mouse</strong>: enable use of mouse in terminals.</li>
+<li><strong>mousefocus</strong>: automatically activate window that the mouse pointer is in.</li>
+<li><strong>mousehide</strong>: hide mouse pointer when characters are typed.</li>
+<li><strong>mousemodel</strong>: set what the right mouse button is used for.</li>
+<li><strong>mouseshape</strong>: set the shape of the mouse in different modes.</li>
+<li><strong>mousetime</strong>: time between mouse clicks for double-click.</li>
+<li><strong>mzquantum</strong>: msecs between polls of MzScheme threads.</li>
+<li><strong>nrformats</strong>: what vim considers numbers for CTRL-A and CTRL-X commands.</li>
+<li><strong>opendevice</strong>: enable reading and writing from devices.</li>
+<li><strong>osfiletype</strong>: deprecated option for RISC OS.</li>
+<li><strong>preserveindent</strong>: when changing indent of the current line, re-use whatever whitespace is available to get to the new indentation.</li>
+<li><strong>asdf</strong>:</li>
+</ul>
+<div class="section" id="printing">
+<h3>Printing<a class="headerlink" href="#printing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>printdevice</strong>: device to use for printing.</li>
+<li><strong>printencoding</strong>: character encoding to use for printing.</li>
+<li><strong>printexpr</strong>: expression to be used to print the PostScript.</li>
+<li><strong>printfont</strong>: font to use for printing.</li>
+<li><strong>printheader</strong>: format for header for prints.</li>
+<li><strong>printmbcharset</strong>: CJK character set to be used for CJK output.</li>
+<li><strong>printmbfont</strong>: list of fonts to be used for CJK output.</li>
+<li><strong>printoptions</strong>: list of format options for printing.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Vim Options</a><ul>
+<li><a class="reference internal" href="#summary-of-useful-options">Summary of Useful Options</a><ul>
+<li><a class="reference internal" href="#folding">Folding</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#summary-of-maybe-not-so-useful-options">Summary of Maybe-not-so-useful Options</a><ul>
+<li><a class="reference internal" href="#printing">Printing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../vim-ext.html"
+                        title="previous chapter">Python Interface Extension</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="vim-fn.html"
+                        title="next chapter">Vimscript Functions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/vim-ext/vim-opt.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="vim-fn.html" title="Vimscript Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../vim-ext.html" title="Python Interface Extension"
+             >previous</a> |</li>
+        <li><a href="../index.html">venom 0.2 documentation</a> &raquo;</li>
+          <li><a href="../vim-ext.html" >Python Interface Extension</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Niels Madan.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
