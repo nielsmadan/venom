@@ -1,0 +1,3 @@
+*venom.txt* extend vim's python interface
+
+venom's documentation is available at: http://nielsmadan.github.com/venom
