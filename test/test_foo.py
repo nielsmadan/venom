@@ -1,6 +1,6 @@
 import flexmock
 
-import mock_vim
+import vim_stub
 
 import vim
 
