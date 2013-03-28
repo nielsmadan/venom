@@ -2,6 +2,7 @@ import sys
 import os
 
 import vim
+
 import vim_ext
 vim_ext.extend_vim()
 
@@ -12,25 +13,11 @@ wrap_proxy = {}
 WRAP_INDEX = 0
 
 
-def include_guard(name):
-    res = vim.eval("exists('g:%s') || &cp") == '0'
-    vim.command("let g:%s = 1" % name)
-    return res
-
-
 def import_py(sfile, module_name):
     sys.path.append(os.path.dirname(sfile))
 
     __import__(module_name)
 
-    sys.path.remove(os.path.dirname(sfile))
-
-
-def add_path(sfile):
-    sys.path.append(os.path.dirname(sfile))
-
-
-def rm_path(sfile):
     sys.path.remove(os.path.dirname(sfile))
 
 
@@ -46,6 +33,7 @@ def py_fn_to_vim_command(command_name, py_fn, allow_range=False):
     args = ""
     if allow_range:
         args += "-range"
+
     wrap_proxy[WRAP_INDEX] = py_fn
     vim.command("command! %s %s :py venom.wrap_proxy[%d]()" % (args, command_name, WRAP_INDEX))
     WRAP_INDEX += 1
@@ -65,12 +53,6 @@ nnoremap = _create_mapping_fn("nnoremap")
 inoremap = _create_mapping_fn("inoremap")
 vnoremap = _create_mapping_fn("vnoremap")
 xnoremap = _create_mapping_fn("xnoremap")
-
-
-# class pos(object):
-#     def __init__(self, line, col):
-#         self.line = line
-#         self.col = col
 
 
 def get_selection_coords():
