@@ -18,10 +18,14 @@ List of completed plugins:
 
 List of plugins in development:
 
-* TBD
+* [yankee](https://github.com/nielsmadan/yankee): vim yank manager.
 
 Find the full (work-in-progress) documentation [here](https://nielsmadan.github.com/venom).
 
 Current stable version is 0.1. You're welcome to play around with it, but it's probably going to change a lot.
+
+### Links
+
+You can also get this plugin at [vim.org](http://www.vim.org/scripts/script.php?script_id=4491).
     
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9827ba0171e58b1ba399f7913e6e8307 "githalytics.com")](http://githalytics.com/nielsmadan/venom)
