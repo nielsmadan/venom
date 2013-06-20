@@ -2,6 +2,7 @@ import sys
 import os
 
 import vim
+import random
 
 import vim_ext
 vim_ext.extend_vim()
@@ -11,6 +12,26 @@ fn_proxy = {}
 PROXY_INDEX = 0
 wrap_proxy = {}
 WRAP_INDEX = 0
+
+VENOM_DIR = ""
+
+
+def make_temp_dir():
+    try:
+        os.mkdir(get_temp_dirpath())
+    except OSError:
+        pass
+
+
+def get_temp_dirpath():
+    return os.path.join(VENOM_DIR, ".tmp")
+
+
+def get_temp_file_path():
+    file_name = os.path.join(get_temp_dirpath(),
+                             "".join(["%s" % random.choice(range(10)) for x in range(10)]))
+
+    return file_name
 
 
 def import_py(sfile, module_name):

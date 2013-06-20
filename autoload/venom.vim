@@ -18,7 +18,10 @@ import vim
 
 sys.path.append(os.path.dirname(vim.eval("s:sfile")))
 
+
 import venom
+
+venom.VENOM_DIR = os.path.dirname(vim.eval("s:sfile"))
 
 sys.path.remove(os.path.dirname(vim.eval("s:sfile")))
 END_PY
