@@ -17,5 +17,8 @@ class _registers(object):
         else:
             vim.command('let @%s="%s"' % (name, val))
 
+    def copy(self, reg_from, reg_to):
+        vim.command('let @%s=@%s' % (reg_to, reg_from))
+
 
 vim.registers = _registers()
