@@ -84,3 +84,18 @@ def replace_visual_selection(text):
 def get_current_line(read_only=True):
     if read_only:
         return vim.eval('getline(".")')
+
+def open_file(file_name):
+    vim.command('edit %s' % file_name)
+
+def open_file_vsplit(file_name):
+    vim.command('vsplit %s' % file_name)
+
+def open_file_hsplit(file_name):
+    vim.command('split %s' % file_name)
+
+def open_file_tab(file_name):
+    vim.command('tabedit %s' % file_name)
+
+def get_current_file_path():
+    return vim.eval("expand('%:p')")
