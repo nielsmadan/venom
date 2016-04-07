@@ -6,3 +6,4 @@ def extend_vim():
     import vim_ext.vim_win
     import vim_ext.vim_regs
     import vim_ext.vim_buf
+    import vim_ext.vim_highlight
